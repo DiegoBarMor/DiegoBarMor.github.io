@@ -1,8 +1,6 @@
-
 .contents {
   display: flex;
   flex-direction: row;
-  /* height: 100vh; */
 }
 .LeftPanel {
   margin-right: 16px;
@@ -11,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   padding-top: 5%;
-  /* justify-content: center; */
 }
 .ProfilePicture {
   max-width: 200px;
@@ -45,8 +42,6 @@
   flex: 5;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
 }
 .Details {
   flex-direction: row;
@@ -55,7 +50,6 @@
   margin-right: 64px;
   flex: 5;
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
   justify-content: top;
 }
@@ -79,7 +73,6 @@
   transform: translateY(-50%); /* Adjust to center vertically */
   width: 20px;
   height: 20px;
-  /* background-image: url("icons/monitor.png"); */
   background-size: contain; /* Ensure the icon fits within the specified size */
   background-repeat: no-repeat; /* Prevent the icon from repeating */
 }

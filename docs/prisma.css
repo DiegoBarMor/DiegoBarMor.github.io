@@ -28,7 +28,6 @@
 nav {
   top: 0;
   width: 100%;
-  height: auto;
   padding: 10px 0;
   position: fixed;
   background-color: var(--nav-box);
@@ -43,10 +42,11 @@ nav {
 }
 .nav-icon {
   margin-left: 1rem;
-  height: 40px;
+  max-width: 40px;
 }
 .nav-buttons {
-  display: flex;
+  text-align: center;
+  /* display: flex; */
   justify-content: center;
   flex-grow: 1;
 }
