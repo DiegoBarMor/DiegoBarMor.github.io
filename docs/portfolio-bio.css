@@ -1,0 +1,94 @@
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  /* height: 100vh; */
+}
+.LeftPanel {
+  margin-right: 16px;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+  /* justify-content: center; */
+}
+.ProfilePicture {
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0px 0px 16px black;
+}
+.LeftPanel i{
+  font-size: 32px;
+  margin-right: 8px;
+    filter: brightness(0) saturate(100%)
+    invert(92%) sepia(15%) saturate(893%)
+    hue-rotate(103deg) brightness(94%)
+    contrast(81%);
+    /* calculated with https://codepen.io/sosuke/pen/Pjoqqp for --accent: #8dd9cc; */
+  transition: filter 0.4s;
+}
+.LeftPanel i:hover {
+  filter: brightness(0) saturate(100%)
+    invert(76%) sepia(56%) saturate(4966%)
+    hue-rotate(1deg) brightness(108%)
+    contrast(104%) drop-shadow(0 0 2px var(--accent-hover));
+    /* calculated with https://codepen.io/sosuke/pen/Pjoqqp for --accent-hover: #ffa500; */
+}
+.MainContent {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+.AboutMe, .Details {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.Details {
+  flex-direction: row;
+}
+.Formation, .Interests {
+  margin-right: 64px;
+  flex: 5;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: top;
+}
+.AboutMe h2, .Formation h3, .Interests h3 {
+    margin-bottom: 0;
+}
+.Details ul {
+  list-style: none;
+  padding-left: 0;
+}
+.Details ul li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 8px;
+}
+.Details ul li::before {
+  content: ''; /* create an empty pseudo-element. */
+  position: absolute;
+  left: 0;
+  top: 50%; /* Start at the middle of the li */
+  transform: translateY(-50%); /* Adjust to center vertically */
+  width: 20px;
+  height: 20px;
+  /* background-image: url("icons/monitor.png"); */
+  background-size: contain; /* Ensure the icon fits within the specified size */
+  background-repeat: no-repeat; /* Prevent the icon from repeating */
+}
+.Formation ul li::before {
+    background-image: url("icons/diploma.png");
+}
+.ListInterestsPC::before {
+    background-image: url("icons/monitor.png");
+}
+.ListInterestsOther::before {
+    background-image: url("icons/music_note.png");
+}

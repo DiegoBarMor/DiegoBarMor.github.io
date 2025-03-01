@@ -1,3 +1,8 @@
+/* to be used after https://cdn.simplecss.org/simple.min.css */
+
+/************************************************/
+/*************     PRISMA THEME     *************/
+/************************************************/
 :root {
   color-scheme: dark;
   --bg: #111111;
@@ -16,33 +21,73 @@
   --nav-box: #222222;
 }
 
+
+/************************************************/
+/**************** Navigation bar ****************/
+/************************************************/
 nav {
   top: 0;
   width: 100%;
   height: auto;
   padding: 10px 0;
   position: fixed;
-  text-align: center;
   background-color: var(--nav-box);
   border-bottom: 2px solid var(--accent);
   box-shadow: 0px 0px 32px var(--accent);
   z-index: 3;
 }
-nav div a {
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-icon {
+  margin-left: 1rem;
+  height: 40px;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/********** Buttons **********/
+a img.nav-icon {
+  /* display: inline-block; */
+  filter: brightness(0) saturate(100%)
+    invert(92%) sepia(15%) saturate(893%)
+    hue-rotate(103deg) brightness(94%)
+    contrast(81%) drop-shadow(0 0 4px var(--accent));
+    /* calculated with https://codepen.io/sosuke/pen/Pjoqqp for --accent: #8dd9cc; */
+  transition: filter 0.4s;
+}
+a img.nav-icon:hover {
+  filter: brightness(0) saturate(100%)
+    invert(76%) sepia(56%) saturate(4966%)
+    hue-rotate(1deg) brightness(108%)
+    contrast(104%) drop-shadow(0 0 4px var(--accent-hover));;
+    /* calculated with https://codepen.io/sosuke/pen/Pjoqqp for --accent-hover: #ffa500; */
+}
+nav div a.button {
   margin: .5rem !important;
   box-shadow: 0px 0px 16px var(--accent);
 }
-nav div a:hover {
+nav div a.button:hover {
   color: var(--accent-text);
   box-shadow: 0px 0px 16px var(--accent-hover);
 }
+
+
+/************************************************/
+/***************** Main content *****************/
+/************************************************/
 body {
   grid-template-columns: 1fr min(75rem, 90%) 1fr;
 }
 .contents{
   padding: 2rem;
   margin-top: calc(60px + 1rem);
-  box-shadow: 0px 5px 32px var(--accent);
+  box-shadow: 0px 0px 32px var(--accent);
   background-color: var(--contents-bg);
 }
 h1 {
@@ -56,12 +101,16 @@ h2 {
 h3 {
   color: var(--header);
 }
+h4 {
+  color: var(--header);
+}
 a:hover {
   color: var(--accent-hover);
 }
 b {
   color: var(--bold);
 }
+
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
