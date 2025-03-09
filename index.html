@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DBM</title>
+    <title>DiegoBarMor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link rel="stylesheet" type="text/css" href=prisma.css>
-    <link rel="stylesheet" type="text/css" href=portfolio-bio.css>
-    <link rel="stylesheet" type="text/css" href=portfolio-particles.css>
+    <link rel="stylesheet" href="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
-    <nav>
-      <div class="nav-container">
-        <a href="https://diegobarmor.github.io/">
-          <img class="nav-icon" src="icons/home.png" alt="Icon">
-        </a>
-        <div class="nav-buttons">
+    <header class="dynamic-navbar" id="navbar">
+      <nav class="chocomint-nav-container">
+        <abbr title="Home DiegoBarMor"><a href="https://diegobarmor.github.io/">
+            <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/home.png" alt="Icon">
+          </a></abbr>
+        <abbr title="Toggle BG Particles">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/particles.png" alt="Icon" onclick="toggle_particles()">
+        </abbr>
+        <abbr title="Toggle Theme">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/theme.png" alt="Icon" onclick="toggle_theme()">
+        </abbr>
+        <div class="chocomint-nav-buttons">
           <a class="button" href="https://diegobarmor.github.io/">Bio</a>
           <a class="button" href="https://diegobarmor.github.io/index.html">CV [WIP]</a>
-          <a class="button" href="https://diegobarmor.github.io/index.html">Uni Projects [WIP]</a>
-          <a class="button" href="https://diegobarmor.github.io/index.html">Personal Projects [WIP]</a>
+          <select id="project-select">
+            <optgroup label="Projects">
+              <option value="uni-projects">Uni Projects</option>
+              <option value="personal-projects">Personal Projects</option>
+            </optgroup>
+          </select>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <div class="contents">
+    <main id="main">
       <div class="LeftPanel">
         <img class="ProfilePicture" src="images/profile.jpg" alt="Image">
         <p>
@@ -72,15 +80,13 @@
         </div>
 
       </div>
-    </div>
+    </main>
 
-    <!-- adapted from: https://csscrafter.com/css-particle-effects/ -->
-    <div class="bg-animation">
-      <div id="stars0"></div>
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </div>
+    <div id="bg-animation-container"></div>
 
   </body>
+
+  <script src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.js"></script>
+  <script src="navbar.js"></script>
+
 </html>

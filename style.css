@@ -1,4 +1,4 @@
-.contents {
+main {
   display: flex;
   flex-direction: row;
 }
@@ -77,11 +77,11 @@
   background-repeat: no-repeat; /* Prevent the icon from repeating */
 }
 .Formation ul li::before {
-    background-image: url("icons/diploma.png");
+    background-image: url("https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/diploma.png");
 }
 .ListInterestsPC::before {
-    background-image: url("icons/monitor.png");
+    background-image: url("https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/monitor.png");
 }
 .ListInterestsOther::before {
-    background-image: url("icons/music_note.png");
+    background-image: url("https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/music_note.png");
 }
