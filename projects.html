@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DiegoBarMor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <header class="dynamic-navbar" id="navbar">
+      <nav class="chocomint-nav-container">
+        <abbr title="Home DiegoBarMor"><a href="https://diegobarmor.github.io/">
+            <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/home.png" alt="Icon">
+          </a></abbr>
+        <abbr title="Toggle BG Particles">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/particles.png" alt="Icon" onclick="toggle_particles()">
+        </abbr>
+        <abbr title="Toggle Theme">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/theme.png" alt="Icon" onclick="toggle_theme()">
+        </abbr>
+        <div class="chocomint-nav-buttons">
+          <a class="button" href="https://diegobarmor.github.io/">Bio</a>
+          <a class="button" href="https://diegobarmor.github.io/projects.html">Projects</a>
+          <!-- <a class="button" href="https://diegobarmor.github.io/cv.html">CV</a> -->
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" style="flex-direction: column;">
+      <h1>Projects</h1>
+
+      <div class="grid">
+        <div>
+          <a href="https://pypi.org/project/prisma-tui/" target="_blank">
+            <img src="images/projects/prisma-tui.png" alt="prisma-tui Project">
+          </a>
+          <h2><a href="https://pypi.org/project/prisma-tui/" target="_blank">prisma-tui</a></h2>
+          A TUI framework based on the idea of "multi-layered transparency" composition.
+          <a href="https://github.com/DiegoBarMor/prisma-tui" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div>
+          <a href="https://diegobarmor.github.io/chocomint-css" target="_blank">
+            <img src="images/projects/chocomint-css.png" alt="chocomint-css Project">
+          </a>
+          <h2><a href="https://diegobarmor.github.io/chocomint-css" target="_blank">chocomint-css</a></h2>
+          Minimal CSS framework based on "Simple CSS" (by Kev Quirk), with some extra effects.
+          <a href="https://github.com/DiegoBarMor/chocomint-css" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div>
+          <a href="https://diegobarmor.github.io/maths-tutorship" target="_blank">
+            <img src="images/projects/maths-tutorship.png" alt="maths-tutorship Project">
+          </a>
+          <h2><a href="https://diegobarmor.github.io/maths-tutorship" target="_blank">maths-tutorship</a></h2>
+          <b>[University]</b> Tutorship material for the "Maths M1 ISDD" 2024 course (UPC).
+          <a href="https://github.com/DiegoBarMor/maths-tutorship" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div>
+          <a href="https://diegobarmor.github.io/thesis-qcb" target="_blank">
+            <img src="images/projects/thesis-qcb.png" alt="thesis-qcb Project">
+          </a>
+          <h2><a href="https://diegobarmor.github.io/thesis-qcb" target="_blank">thesis-qcb</a></h2>
+          <b>[University]</b> Master's Degree Thesis in Quantitative and Computational Biology titled "Physical characterization of protein and RNA binding sites and their visualization" (UniTN).
+          <a href="https://github.com/DiegoBarMor/thesis-qcb" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div>
+          <a href="https://diegobarmor.github.io/computational-biophysics-project" target="_blank">
+            <img src="images/projects/computational-biophysics-project.png" alt="computational-biophysics-project Project">
+          </a>
+          <h2><a href="https://diegobarmor.github.io/computational-biophysics-project" target="_blank">computational-biophysics-project</a></h2>
+          <b>[University]</b> MD simulation of a protein and the analysis of the obtained trajectories. Final project for "Computational Biophysics" (UniTN).
+          <a href="https://github.com/DiegoBarMor/computational-biophysics-project" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div>
+          <a href="https://diegobarmor.github.io/interactive-graph-cut-segmentation" target="_blank">
+            <img src="images/projects/interactive-graph-cut-segmentation.png" alt="interactive-graph-cut-segmentation Project">
+          </a>
+          <h2><a href="https://diegobarmor.github.io/interactive-graph-cut-segmentation" target="_blank">interactive-graph-cut-segmentation</a></h2>
+          <b>[University]</b> Matplotlib based GUI for interactive segmentation of images via seeds specified by the user, implementing the Boykov-Kolmogorov algorithm. Final project for "Signal, Image and Video" (UniTN).
+          <a href="https://github.com/DiegoBarMor/interactive-graph-cut-segmentation" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+
+    </main>
+
+    <div id="bg-animation-container"></div>
+
+  </body>
+
+  <script src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.js"></script>
+
+</html>

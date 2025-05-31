@@ -85,3 +85,38 @@ main {
 .ListInterestsOther::before {
     background-image: url("https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/music_note.png");
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  max-width: 100%;
+  grid-gap: 1rem;
+}
+
+
+.grid>div {
+  background-color: var(--contents-bg);
+  padding: 1.5rem;
+  border: 2px solid var(--accent);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+@media (min-width: 1000px) { /* limit to 3 columns */
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+
+.grid img {
+  height: 200px;
+  width: 100%;
+  object-fit: scale-down;
+  display: block;
+}
