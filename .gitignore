@@ -1,4 +1,5 @@
 
 desktop.ini
 
-cv/build/
+cv/build/*
+!cv/build/cv-en.pdf
