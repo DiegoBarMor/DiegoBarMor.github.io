@@ -1,19 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
-available_languages=("en" "fr")
+available_versions=("en" "en_uni" "fr")
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <language>"
-    echo "Available languages: ${available_languages[*]}"
+    echo "Usage: $0 <version>"
+    echo "Available versions: ${available_versions[*]}"
     exit 1
 fi
 
-language=$1
+version=$1
 
-if [[ ! " ${available_languages[*]} " =~ $language ]]; then
-    echo "Error: Invalid language '$1'."
-    echo "Available languages: ${available_languages[*]}"
+if [[ ! " ${available_versions[*]} " =~ $version ]]; then
+    echo "Error: Invalid version '$1'."
+    echo "Available versions: ${available_versions[*]}"
     exit 1
 fi
 
@@ -23,10 +23,9 @@ trap 'rm -rf "$TMPDIR"' EXIT
 cp -r ./* "$TMPDIR"
 
 cd "$TMPDIR"
-echo "\input{cv-$language}" >> main.tex
+echo "\input{cv-$version}" >> main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 cd - > /dev/null
 
-ts=$(date "+%Y%m%d")
 mkdir -p build
-cp "$TMPDIR/main.pdf" "build/cv-$language-$ts.pdf"
+mv "$TMPDIR/main.pdf" "build/cv-$version.pdf"
