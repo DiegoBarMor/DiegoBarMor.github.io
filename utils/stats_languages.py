@@ -11,18 +11,13 @@ RELEVANT_AUTHORS = [
 RELEVANT_EXTENSIONS = {
     "python" : ["py", "pyw", "ipynb"],
     "bash" : ["sh"],
-    # "latex" : ["tex"],
     "html/js/css" : ["htm", "html", "css", "js"],
     "fortran" : ["f", "f90", "F90"],
     "c" : ["c", "h"],
     "cpp" : ["cpp", "hpp"],
     "csharp" : ["cs"],
-    "java" : ["java"],
-    "kotlin" : ["kt", "kts"],
+    "java/kotlin" : ["java", "kt", "kts"],
     "rust" : ["rs"],
-    # "r/matlab": ["r", "R", "m", "mat"],
-    # "glsl/hlsl" : ["glsl", "hlsl"],
-    # "batch" : ["bat"],
 }
 
 KNOWN_LANGUAGES = {
@@ -71,7 +66,7 @@ def main():
 
 
     ### PART 2: parse the changes column to extract the file extensions of the files that were added or modified
-    df["year_month"]  = df["date"].map(lambda s: '/'.join(s.split("/")[:2]))
+    df["year_month"] = df["date"].map(lambda s: '/'.join(s.split("/")[:2]))
     df["extensions"] = df["changes"].map(parse_changes)
     df = df[["year_month", "extensions"]]
     df = df[df["extensions"] != ""]
@@ -83,18 +78,35 @@ def main():
 
     ### PART 3: group the repos summary by year/month and file extension, and count the number of occurrences
     df_stats = pd.DataFrame([
-        {"month": month, **parse_extensions(df[df["year_month"] == month]["extensions"])}
-        for month in df["year_month"].unique()
+        {"year_month": year_month, **parse_extensions(df[df["year_month"] == year_month]["extensions"])}
+        for year_month in df["year_month"].unique()
     ])
-    df_stats.sort_values("month", inplace = True)
+    df_stats.sort_values("year_month", inplace = True)
     print(df_stats)
 
 
     ### PART 4: plot the number of occurrences of each file extension per month
     sns.color_palette("colorblind")
-    sns.lineplot(data = df_stats.melt(id_vars = "month", var_name = "language", value_name = "count"),
-                 x = "month", y = "count", hue = "language")
-    plt.xticks(rotation = 45)
+    sns.lineplot(
+        data = df_stats.melt(id_vars = "year_month", var_name = "language", value_name = "count"),
+        x = "year_month", y = "count", hue = "language", style = "language", markers = True, dashes = False,
+    )
+
+    year  = df_stats["year_month"].map(lambda s: s.split("/")[0])
+    month = df_stats["year_month"].map(lambda s: s.split("/")[1])
+    c_years = sorted(Counter(year).items(), key = lambda t: t[0])
+    xpos = 0
+    for year,n_months in c_years:
+        xpos += n_months
+        plt.axvline(x = xpos - 0.5, color = "gray", linestyle = "--", linewidth = 1.0)
+        plt.text(x = xpos - n_months/2 - 0.5, y = plt.ylim()[1] - 25, s = year, fontsize = 16, ha = "center", va = "bottom")
+
+    plt.legend(loc = "center left", fontsize = 16)
+    plt.title("Number of files modified/added per month by language", fontsize = 18)
+    plt.ylabel("# of files modified/added", fontsize = 16)
+    plt.xlabel("Month", fontsize = 16)
+    plt.xticks(ticks = range(len(df_stats)), labels = month, rotation = 60)
+    plt.tick_params(axis = "both", which = "major", labelsize = 14)
     plt.show()
 
 

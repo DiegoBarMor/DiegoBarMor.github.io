@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DiegoBarMor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <header class="dynamic-navbar" id="navbar">
+      <nav class="chocomint-nav-container">
+        <abbr title="Home DiegoBarMor"><a href="https://diegobarmor.github.io/">
+            <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/home.png" alt="Icon">
+          </a></abbr>
+        <abbr title="Toggle BG Particles">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/particles.png" alt="Icon" onclick="toggle_particles()">
+        </abbr>
+        <abbr title="Toggle Theme">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/theme.png" alt="Icon" onclick="toggle_theme()">
+        </abbr>
+        <div class="chocomint-nav-buttons">
+          <a class="button" href="https://diegobarmor.github.io/">Bio</a>
+          <a class="button" href="https://diegobarmor.github.io/projects.html">Projects</a>
+          <a class="button" href="https://diegobarmor.github.io/stats.html">Stats</a>
+          <a class="button" href="https://github.com/DiegoBarMor/DiegoBarMor.github.io/blob/main/cv/build/cv-en.pdf" target="_blank">CV</a>
+          <a class="button" href="https://diegobarmor.github.io/publications.html">Publications</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" style="flex-direction: column;">
+      <h1>Most used programming languages</h1>
+      <p>
+        This is a rough estimate of my most used programming languages as for July 2026. It's based on the number of files modified or added per month in commits with my author name, across all my non-archived local repositories. Some old contributions might be missing, namely archived private repositories backed up in GitHub.
+        <img src="images/stats_languages.png" alt="most used programming languages">
+      </p>
+
+    </main>
+
+    <div id="bg-animation-container"></div>
+
+  </body>
+
+  <script src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.js"></script>
+
+</html>
